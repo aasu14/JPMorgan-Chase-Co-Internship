@@ -1,0 +1,37 @@
+From 8ca4e557ef92200ea85b989495b0d8c2b68bafba Mon Sep 17 00:00:00 2001
+From: akash Gupta <it1akgec@gmail.com>
+Date: Sat, 15 Feb 2020 12:01:10 +0000
+Subject: [PATCH] Create Patch File
+
+---
+ client3.py     | 2 +-
+ client_test.py | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/client3.py b/client3.py
+index c97a948..cfb5585 100644
+--- a/client3.py
++++ b/client3.py
+@@ -47,7 +47,7 @@ def getRatio(price_a, price_b):
+ if __name__ == "__main__":
+ 
+ 	# Query the price once every N seconds.
+-	for _ in iter(range(N)):
++	for _ in range(N):
+ 		quotes = json.loads(urllib.request.urlopen(QUERY.format(random.random())).read())
+ 
+ 		for quote in quotes:
+diff --git a/client_test.py b/client_test.py
+index b215a10..0ff7a32 100644
+--- a/client_test.py
++++ b/client_test.py
+@@ -1,5 +1,5 @@
+ import unittest
+-from client3 import *
++from client3 import getDataPoint,getratio
+ 
+ class ClientTest(unittest.TestCase):
+   def test_getDataPoint_calculatePrice(self):
+-- 
+2.20.1
+
